@@ -16,12 +16,13 @@ class Round {
     if (!this.currentTurn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentTurn.guess);
     };
-    this.currentCard = this.deck.cards[this.turnCount]
+    this.currentCard = this.deck.cards[this.turnCount];
     return this.currentTurn.giveFeedback();
   };
   
   calculatePercentCorrect = () => ((this.turnCount - this.incorrectGuesses.length) / this.turnCount) * 100;
 
+  endRound = () => `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
 };
 
 module.exports = Round;
