@@ -16,7 +16,7 @@ describe("Turn", function() {
     let turn = new Turn("1958", card);
     
     expect(turn.guess).to.equal("1958");
-    expect(turn.card).to.equal(card);
+    expect(turn.card).to.deep.equal(card);
   })
 
   it("should have a method that returns the guess", function() {
@@ -30,7 +30,7 @@ describe("Turn", function() {
     let card = new Card(1, "What year was the Fender Jazzmaster released?", ["1951", "1963", "1958", "1970"], "1958");
     let turn = new Turn("1958", card);
     
-    expect(turn.returnCard()).to.equal(turn.card);
+    expect(turn.returnCard()).to.deep.equal(turn.card);
   });
 
   it("should have a method that returns a boolean indicating if the user’s guess matches the correct answer on the card", function() {
