@@ -22,7 +22,6 @@ class Game {
     for (let i = 0; i < 4; i++) { 
       cards.push(new Card(data.prototypeData[i]));
     };
-
     let deck = new Deck(cards);
     this.currentRound = new Round(deck);
     this.printMessage(deck, this.currentRound);
