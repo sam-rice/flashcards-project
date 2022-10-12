@@ -15,22 +15,22 @@ describe("Turn", function() {
 
   it("should be instantiated with two arguments", function() {
     let card = new Card(data.prototypeData[0]);
-    let turn = new Turn("1958", card);
+    let turn = new Turn("array", card);
     
-    expect(turn.guess).to.equal("1958");
+    expect(turn.guess).to.equal("array");
     expect(turn.card).to.deep.equal(card);
   })
 
   it("should have a method that returns the guess", function() {
     let card = new Card(data.prototypeData[0]);
-    let turn = new Turn("1958", card);
+    let turn = new Turn("array", card);
     
     expect(turn.returnGuess()).to.equal(turn.guess);
   });
 
   it("should have a method that returns the card", function() {
     let card = new Card(data.prototypeData[0]);
-    let turn = new Turn("1958", card);
+    let turn = new Turn("array", card);
     
     expect(turn.returnCard()).to.deep.equal(turn.card);
   });
