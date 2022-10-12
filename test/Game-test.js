@@ -2,43 +2,21 @@ const chai = require('chai');
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 const Round = require('../src/Round');
-const Turn = require('../src/Turn');
 const Game = require('../src/Game');
 const expect = chai.expect;
 
 describe("Game", function() {
 
-  it("should keep track of the current round", function() {
+  it("should have a method that starts a new game by creating new Cards, creating a new Deck, creating a new Round, and keeping track of the current Round", function() {
     const game = new Game();
+
+    game.start();
     
     expect(game).to.have.nested.property("currentRound");
+    expect(game.currentRound).to.be.an.instanceOf(Round);
+    expect(game.currentRound.deck).to.be.an.instanceOf(Deck);
+    expect(game.currentRound.deck.cards[0]).to.be.an.instanceOf(Card);
   });
-
-  it("should have a method that creates cards, ", function() {
-    const game = new Game();
-    
-    game.start();
-
-    //create cards
-    //put cards in deck
-    //create round
-
-  });
-
-  // it("should have a method that creates cards, ", function() {
-  //   const game = new Game();
-    
-  //   invoke printMessage
-
-  // });
-
-  // it("should have a method that creates cards, ", function() {
-  //   const game = new Game();
-    
-  //   invoke printQuestion()
-
-  // });
-
 });
 
 
