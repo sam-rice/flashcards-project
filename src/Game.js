@@ -18,12 +18,12 @@ class Game {
   };
 
   start() {
-    let card1 = new Card(data.prototypeData[0]);
-    let card2 = new Card(data.prototypeData[1]);
-    let card3 = new Card(data.prototypeData[2]);
-    let card4 = new Card(data.prototypeData[3]);
+    let cards = []
+    for (let i = 0; i < 4; i++) { 
+      cards.push(new Card(data.prototypeData[i]));
+    };
 
-    let deck = new Deck([card1, card2, card3, card4]);
+    let deck = new Deck(cards);
     this.currentRound = new Round(deck);
     this.printMessage(deck, this.currentRound);
     this.printQuestion(this.currentRound);
