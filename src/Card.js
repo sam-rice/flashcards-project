@@ -1,4 +1,3 @@
-
 class Card {
   constructor(dataObject) {
     this.id = dataObject.id
