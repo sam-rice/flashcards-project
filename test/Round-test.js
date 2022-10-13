@@ -82,6 +82,20 @@ describe("Round", function() {
     round.takeTurn("mutator method");
     round.takeTurn("iteration method");
 
-    expect(round.endRound()).to.equal("** Round over! ** You answered 75% of the questions correctly!");
+    expect(round.endRound()).to.equal(console.log("** Round over! ** You answered 75% of the questions correctly!"));
+  });
+
+  it("should have a method that saves the round's start time as a property", function() {
+    let cards = []
+    for (let i = 0; i < 4; i++) { 
+      cards.push(new Card(data.prototypeData[i]));
+    };
+    let deck = new Deck(cards);
+    let round = new Round(deck);
+
+    round.recordStartTime();
+
+    expect(round).to.have.property("startTime").that.is.a("number");
+    expect(`${round.startTime}`).to.have.lengthOf.at.least(13);
   });
 });

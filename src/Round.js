@@ -22,8 +22,6 @@ class Round {
 
   recordStartTime = () => this.startTime = Date.now();
 
-  
-  
   calculatePercentCorrect = () => ((this.turnCount - this.incorrectGuesses.length) / this.turnCount) * 100;
 
   endRound = () => console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
