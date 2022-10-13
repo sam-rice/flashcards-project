@@ -7,38 +7,29 @@ const Turn = require('../src/Turn');
 const data = require('../src/data');
 
 describe("Round", function() {
+  let cards;
+  let deck;
+  let round;
 
-  it("should be instantiated with a Deck and a current Card", function() {
-    let cards = []
+  this.beforeEach(() => {
+    cards = []
     for (let i = 0; i < 4; i++) { 
       cards.push(new Card(data.prototypeData[i]));
     };
-    let deck = new Deck(cards);
-    let round = new Round(deck);
+    deck = new Deck(cards);
+    round = new Round(deck);
+  });
 
+  it("should be instantiated with a Deck and a current Card", function() {
     expect(round.deck).to.deep.equal(deck);
     expect(round.currentCard).to.deep.equal(cards[0]);
   });
 
   it("should have a method that returns the current Card being played", function() {
-    let cards = []
-    for (let i = 0; i < 4; i++) { 
-      cards.push(new Card(data.prototypeData[i]));
-    };
-    let deck = new Deck(cards);
-    let round = new Round(deck);
-
     expect(round.returnCurrentCard()).to.deep.equal(round.currentCard);
   });
 
   it("should have a method that creates a new instance of Turn, updates the turn count/current Card, adds incorrect answers to an array, and returns feedback on guess", function() {
-    let cards = []
-    for (let i = 0; i < 4; i++) { 
-      cards.push(new Card(data.prototypeData[i]));
-    };
-    let deck = new Deck(cards);
-    let round = new Round(deck);
-    
     expect(round.currentCard).to.deep.equal(cards[0])
     expect(round.takeTurn("object")).to.equal("correct!")
     expect(round.currentTurn).to.be.an.instanceOf(Turn);
@@ -53,13 +44,6 @@ describe("Round", function() {
   });
 
   it("should have a method that calculates and returns the percentage of correct guesses", function() {
-    let cards = []
-    for (let i = 0; i < 4; i++) { 
-      cards.push(new Card(data.prototypeData[i]));
-    };
-    let deck = new Deck(cards);
-    let round = new Round(deck);
-
     round.takeTurn("function");
     expect(round.calculatePercentCorrect()).to.equal(0);
     round.takeTurn("array");
@@ -70,24 +54,10 @@ describe("Round", function() {
   });
 
   it("should have a method that prints a 'round-over' message and percentage of correct answers", function() {
-    let cards = []
-    for (let i = 0; i < 4; i++) { 
-      cards.push(new Card(data.prototypeData[i]));
-    };
-    let deck = new Deck(cards);
-    let round = new Round(deck);
-
     expect(typeof round.endRound).to.equal("function")
   });
 
   it("should have a method that saves the round's start time as a property", function() {
-    let cards = []
-    for (let i = 0; i < 4; i++) { 
-      cards.push(new Card(data.prototypeData[i]));
-    };
-    let deck = new Deck(cards);
-    let round = new Round(deck);
-
     round.recordStartTime();
 
     expect(round).to.have.property("startTime").that.is.a("number");
