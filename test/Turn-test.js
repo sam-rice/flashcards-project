@@ -3,16 +3,16 @@ const expect = chai.expect;
 
 const Turn = require('../src/Turn');
 const Card = require('../src/Card');
-const data = require('../src/data');
+const data = require('../src/test-data');
 
 describe("Turn", function() {
   let card, turn, correctTurn, incorrectTurn;
 
   this.beforeEach(() => {
     card = new Card(data.prototypeData[0]);
-    turn = new Turn("array", card);
-    correctTurn = new Turn("object", card);
-    incorrectTurn = new Turn("array", card);
+    turn = new Turn("1958", card);
+    correctTurn = new Turn("1958", card);
+    incorrectTurn = new Turn("1951", card);
   });
 
   it("should be an instance of Turn", function() {
@@ -20,7 +20,7 @@ describe("Turn", function() {
   });
 
   it("should be instantiated with a guess and a Card", function() {
-    expect(turn.guess).to.equal("array");
+    expect(turn.guess).to.equal("1958");
     expect(turn.card).to.deep.equal(card);
   })
 
