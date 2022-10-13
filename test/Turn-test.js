@@ -6,10 +6,7 @@ const Card = require('../src/Card');
 const data = require('../src/data');
 
 describe("Turn", function() {
-  let card;
-  let turn;
-  let correctTurn;
-  let incorrectTurn;
+  let card, turn, correctTurn, incorrectTurn;
 
   this.beforeEach(() => {
     card = new Card(data.prototypeData[0]);

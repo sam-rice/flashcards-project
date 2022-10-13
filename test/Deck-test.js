@@ -6,8 +6,7 @@ const data = require('../src/data');
 
 
 describe("Deck", function() {
-  let cards;
-  let deck;
+  let cards, deck;
 
   this.beforeEach(() => {
     cards = [];

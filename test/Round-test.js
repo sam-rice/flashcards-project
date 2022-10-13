@@ -7,9 +7,7 @@ const Turn = require('../src/Turn');
 const data = require('../src/data');
 
 describe("Round", function() {
-  let cards;
-  let deck;
-  let round;
+  let cards, deck, round;
 
   this.beforeEach(() => {
     cards = []

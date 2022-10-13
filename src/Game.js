@@ -19,7 +19,7 @@ class Game {
 
   start() {
     let cards = []
-    for (let i = 0; i < 4; i++) { 
+    for (let i = 0; i < data.prototypeData.length; i++) { 
       cards.push(new Card(data.prototypeData[i]));
     };
     let deck = new Deck(cards);
