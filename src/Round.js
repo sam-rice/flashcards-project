@@ -19,10 +19,21 @@ class Round {
     this.currentCard = this.deck.cards[this.turnCount];
     return this.currentTurn.giveFeedback();
   };
-  
+
+  recordStartTime = () => this.startTime = Date.now();
+
   calculatePercentCorrect = () => ((this.turnCount - this.incorrectGuesses.length) / this.turnCount) * 100;
 
-  endRound = () => `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
+  endRound = () => {
+    let gameLength = (Date.now() - this.startTime)
+    console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly in ${this.convertToMinSec(gameLength)}!`);
+  };
+
+  convertToMinSec = millis => {
+    let minutes = Math.floor(millis / 60000);
+    let seconds = ((millis % 60000) / 1000).toFixed(0);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  };
 };
 
 module.exports = Round;

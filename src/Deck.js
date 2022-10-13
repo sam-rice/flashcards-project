@@ -5,7 +5,6 @@ class Deck {
   };
 
   countCards = () => this.deckLength;
-  
 };
 
 module.exports = Deck;

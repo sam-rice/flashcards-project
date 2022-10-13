@@ -6,11 +6,6 @@ const data = require('../src/data');
 
 describe('Card', function() {
 
-  it('should be a function', function() {
-    const card = new Card({});
-    expect(Card).to.be.a('function');
-  });
-
   it('should be an instance of Card', function() {
     const card = new Card({});
     expect(card).to.be.an.instanceof(Card);
