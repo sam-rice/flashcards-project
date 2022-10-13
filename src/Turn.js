@@ -5,8 +5,11 @@ class Turn {
   };
 
   returnGuess = () => this.guess;
+
   returnCard = () => this.card;
+
   evaluateGuess = () => (this.card.correctAnswer === this.guess);
+  
   giveFeedback = () => this.card.correctAnswer === this.guess ? "correct!" : "incorrect!";
 };
 

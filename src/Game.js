@@ -28,7 +28,6 @@ class Game {
     this.printQuestion(this.currentRound);
     this.currentRound.recordStartTime();
   };
-
 };
 
 
