@@ -26,6 +26,7 @@ class Game {
     this.currentRound = new Round(deck);
     this.printMessage(deck, this.currentRound);
     this.printQuestion(this.currentRound);
+    this.currentRound.recordStartTime();
   };
 
 };

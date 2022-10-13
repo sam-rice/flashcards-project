@@ -19,10 +19,14 @@ class Round {
     this.currentCard = this.deck.cards[this.turnCount];
     return this.currentTurn.giveFeedback();
   };
+
+  recordStartTime = () => this.startTime = Date.now();
+
+  
   
   calculatePercentCorrect = () => ((this.turnCount - this.incorrectGuesses.length) / this.turnCount) * 100;
 
-  endRound = () => `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
+  endRound = () => console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
 };
 
 module.exports = Round;
