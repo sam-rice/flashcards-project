@@ -1,71 +1,43 @@
-# FlashCards Starter Kit
+# Flashcards Project
 
-## Fork This Repo
+### Abstract:
+[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+This application is a quiz-style game that runs in the terminal. The user is prompted to select an answer from a list of multiple choices for each of the set of 30 questions. The user recieves feedback on the accuracy of each answer. At the end of all questions, the user recieves a "round over" message that includes a percentage of their accurate answers and total time elapsed to complete the quiz. 
 
-On the top right corner of this page, click the **Fork** button.
+### Installation Instructions:
+[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+1. Fork this repository.
+2. Clone your new, forked repo to your local machine.
+3. `cd` into the project's parent-level repository on your local machine for all of the following:
+- Run `npm install` in your terminal.
+- Run `node index.js` in your terminal to start the quiz.
+- Run `npm test test/<test-file-name>` in your terminal to run a unit test.
 
-## Setup
+### Preview of App:
+[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
+<img width="1350" alt="flashcards_pg1" src="https://user-images.githubusercontent.com/108169988/195733354-838c8cc5-8a63-4338-bfc1-b474e940a288.png">
+<img width="1350" alt="flashcards_pg2" src="https://user-images.githubusercontent.com/108169988/195733369-e2adadf1-69e9-4d86-a97f-040f2f78e0e8.png">
 
-```bash
-git clone [remote-address] [what you want to name the repo]
-```
+### Context:
+[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
 
-Once you have cloned the repo, change into the directory and install the library dependencies. Run:
+This project was an assignment for the first week of the second module of Turing's front-end software engineering program. I spent approximately 8 hours completing it. 
 
-```bash
-npm install
-```
+### Contributors:
+[//]: <> (Who worked on this application? Link to their GitHubs.)
 
-To verify that it is setup correctly, run `npm test` in your terminal. You should have 5 pending tests in your `Card` test file that show up.
+[Sam Rice](https://github.com/sam-rice)
 
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
+### Learning Goals:
+[//]: <> (What were the learning goals of this project? What tech did you work with?)
 
-```bash
-Your project is running...
-```
+The learning goals of this project included learning to write unit tests (with Mocha/Chai, specifically), learning to integrate added functionality with a pre-existing codebase, programming a terminal-based application, and continuing to refine workflow/styling of "vanilla" JavaScript (class-to-class interactions, especially).
 
-*Note that you will not need to you run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
+### Wins & Challenges
+[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 
+- The biggest challenge I faced while making this project was getting a handle on how the various utility files, datasets, class sheets, etc. were interconnected. This was the first project of the program in which we were required to build an application that runs in the terminal, and as a result, I had to trial-and-error a handful of different debugging methods throughout the project. Ultimately, that process gave me a few new tools to try in the future.
 
-## Where to Add Your Code
-
-### JavaScript
-
-**Create all of your feature code files in the `src` directory.**
-
-We will be using the `module.exports` and `require` syntax to share code across files.
-
-## How to View Your Code in Action
-
-Once you are working through Iteration 3, you will want to start your server to test your functionality.
-In the terminal, run:
-
-```bash
-node index.js
-```
-
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
-
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
+- One "win" I experienced came from debugging the `.endRound()` method in the `Round` class. I couldn't get the "round over" message to display at the end of the round, and initially thought the method was never being invoked due to a condition never being met in `util.js`, which is a file that was pre-written and includes syntax that we haven't learned yet. After spending time researching/testing how different pieces of `util.js` worked, I realized I'd forgotten a `console.log()` in the `.endRound()` method. I wasn't used to being in situations where a missing `console.log()` would make a difference in an app's functionality, since I've mostly used `console.log()`s for debugging when working with the DOM/browser console. Despite spending time trying to debug what ended up being a pretty simple syntax error, the experience gave me an oppurtunity to dive into some of the syntax that we'll be learning later on in the program.
 
